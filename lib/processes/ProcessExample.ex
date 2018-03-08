@@ -29,7 +29,7 @@ defmodule ProcessExample do
   end
 
   defp start_workers(_, _) do
-    exit("start_workers requires a positiv integer as argument")
+    exit("start_workers requires two positiv integers as arguments")
   end
 
   def worker(home, func, n) do
