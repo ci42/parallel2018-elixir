@@ -42,10 +42,8 @@ defmodule ProcessExampleTrapExit do
   end
 
   def worker(home, func, n) do
-    #IO.puts "started Worker with PID: #{self()}"
     result = func.(n)
     send(home, {result, self()})
-    #IO.puts "sending result to #{home}"
   end
 
 end
