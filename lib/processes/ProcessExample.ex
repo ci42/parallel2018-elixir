@@ -1,7 +1,6 @@
 defmodule ProcessExample do
 
   def start(max_procs, max_fac) when max_procs > 0 and max_fac > 0 do
-    Process.flag(:trap_exit, false)
     start_workers max_procs, max_fac
     receive_results()
   end
@@ -23,7 +22,7 @@ defmodule ProcessExample do
     :ok
   end
 
-  defp start_workers(n, max_fac) when is_integer(n) and n > 0 do
+  defp start_workers(n, max_fac) when is_integer(n) and n > 0 and is_integer(max_fac) and max_fac > 0 do
     spawn(ProcessExample, :worker, [self(), &Factorial.factorial/1, :rand.uniform(max_fac)])
     start_workers(n-1, max_fac)
   end
