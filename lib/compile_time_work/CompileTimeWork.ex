@@ -1,5 +1,5 @@
-defmodule CompileTimeWork do
+# defmodule CompileTimeWork do
   
-  IO.puts "Executed while compiling"
+#   IO.puts "Executed while compiling"
 
-end
+# end

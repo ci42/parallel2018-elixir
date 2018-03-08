@@ -15,9 +15,9 @@ defmodule HelloExtended do
       nil
       
   """
-  def greet(name) when is_list(name) or is_binary(name) or is_atom(name) do
-    private_greet "Have we met yet, #{name}?"
-  end
+  # def greet(name) when is_list(name) or is_binary(name) or is_atom(name) do
+  #   private_greet "Have we met yet, #{name}?"
+  # end
   
   def greet(supplier) when is_function(supplier) do
     private_greet("Hello #{supplier.()}")
